@@ -109,7 +109,7 @@ WORKDIR /bin
 ## curl is needed by the entrypoint script
 RUN set -xe \
   && apt-get update -qq \
-  && apt-get install -y --no-install-recommends curl
+  && apt-get install -y --no-install-recommends curl ca-certificates
 
 COPY ./docker-init.sh .
 
