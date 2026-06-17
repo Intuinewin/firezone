@@ -25,6 +25,7 @@ defmodule PortalAPI.ResourceJSON do
       name: resource.name,
       address: resource.address,
       address_description: resource.address_description,
+      site_id: resource.site_id,
       type: resource.type
     }
     |> maybe_put_ip_stack(resource)

@@ -122,6 +122,7 @@ defmodule PortalAPI.ResourceControllerTest do
                  "address" => resource.address,
                  "address_description" => resource.address_description,
                  "id" => resource.id,
+                 "site_id" => resource.site_id,
                  "name" => resource.name,
                  "type" => Atom.to_string(resource.type),
                  "ip_stack" => "ipv4_only"
@@ -201,6 +202,7 @@ defmodule PortalAPI.ResourceControllerTest do
       assert resp["data"]["address"] == attrs["address"]
       assert resp["data"]["address_description"] == nil
       assert resp["data"]["name"] == attrs["name"]
+      assert resp["data"]["site_id"] == attrs["site_id"]
       assert resp["data"]["type"] == attrs["type"]
       assert resp["data"]["ip_stack"] == attrs["ip_stack"]
     end
@@ -228,6 +230,7 @@ defmodule PortalAPI.ResourceControllerTest do
       assert resp["data"]["name"] == attrs["name"]
       assert resp["data"]["type"] == attrs["type"]
       assert resp["data"]["address"] == nil
+      assert resp["data"]["site_id"] == nil
     end
 
     test "returns 422 when creating static_device_pool with feature disabled", %{
@@ -475,6 +478,7 @@ defmodule PortalAPI.ResourceControllerTest do
                  "address" => resource.address,
                  "address_description" => resource.address_description,
                  "id" => resource.id,
+                 "site_id" => resource.site_id,
                  "name" => resource.name,
                  "type" => Atom.to_string(resource.type),
                  "ip_stack" => Atom.to_string(resource.ip_stack)
