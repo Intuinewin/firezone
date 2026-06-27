@@ -8,14 +8,11 @@ defmodule PortalAPI.Schemas.Membership do
     OpenApiSpex.schema(%{
       title: "Membership",
       description: "Membership",
-      type: :array,
-      items: %Schema{
-        type: :object,
-        properties: %{
-          id: %Schema{type: :string, format: :uuid, description: "Actor ID"},
-          name: %Schema{type: :string, description: "Actor Name"},
-          type: %Schema{type: :string, description: "Actor Type"}
-        }
+      type: :object,
+      properties: %{
+        id: %Schema{type: :string, format: :uuid, description: "Actor ID"},
+        name: %Schema{type: :string, description: "Actor Name"},
+        type: %Schema{type: :string, description: "Actor Type"}
       },
       example: [
         %{
